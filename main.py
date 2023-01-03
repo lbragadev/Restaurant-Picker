@@ -12,7 +12,16 @@
 # implement add restaurant method
 # implement delete restaurant method
 
+
+
+
+
+#DEV_NOTES
+#pip3 install -r requirements.txt
+
 def pickRestaurant():
+        #for each restaurant
+            #
         print("PICKING RESTAURANT")
 
 

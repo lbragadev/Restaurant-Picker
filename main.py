@@ -1,3 +1,4 @@
+#TODO
 
 #set up requirements.txt
 
@@ -10,8 +11,6 @@
 # implement pick restaurant method
 # implement add restaurant method
 # implement delete restaurant method
-
-
 
 def pickRestaurant():
         print("PICKING RESTAURANT")

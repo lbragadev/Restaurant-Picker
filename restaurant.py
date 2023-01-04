@@ -89,6 +89,7 @@ def create_restaurants():
 
         #Fast and simple
         ("Jollibee", "chicken joy? say less", Price.cheap, Speed.fast, Ambiance.simple, Nutrition.unhealthy, Ethnicity.filipino),
+        ("Costco Food Court", "1.50 Hot dog and drink? say less", Price.cheap, Speed.fast, Ambiance.simple, Nutrition.unhealthy, Ethnicity.american),
         ("In-n-Out", "Fast, cheap, always delicious burger.", Price.cheap, Speed.fast, Ambiance.simple, Nutrition.unhealthy, Ethnicity.american),
         ("Chik Fil A", "solid chicken sandwich", Price.cheap, Speed.fast, Ambiance.simple, Nutrition.unhealthy, Ethnicity.american),
         ("Mitsuwa", "fast delicious japanese food", Price.cheap, Speed.fast, Ambiance.simple, Nutrition.healthy, Ethnicity.japanese),

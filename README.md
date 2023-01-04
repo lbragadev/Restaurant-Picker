@@ -23,7 +23,7 @@ pip3 install -r requirements.txt
 ```bash
 python pick_restaurant.py --price "cheap" --nutrition "healthy"
 python pick_restaurant.py --ethnicity "mexican"
-python pick_restaurant.py --price "exepnsive" --ambiance "fancy"
+python pick_restaurant.py --price "expensive" --ambiance "fancy"
 
 ```
 

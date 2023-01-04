@@ -32,7 +32,7 @@ Alternatively you can use the pick_restaurant_prompted.py script instead to get 
 python pick_restaurant_prompted.py
 ```
 
-For more info about the cli
+For more info about the cli and the different cli options
 ```bash
 python pick_restaurant.py --help
 python pick_restaurant_prompted.py --help

@@ -1,5 +1,5 @@
 # Restaurant-Picker
-Simple Project that picks a restaurant for you. This project is tailored specifically for my use. The restaurants are located in Irvine/Orange County area.
+Simple Project that picks a restaurant for you. The restaurants in this project is tailored more to my liking. These are restaurants i enjoy eating at and located in Irvine/Orange County area.
 
 ## About The Project
 Have you ever spent time wondering where to eat? Have you ever asked your significant other "Where should we eat?" only to get the response, "I'm down for anything:)". Do you want to save time picking a restaurant? If you said yes to any of the questions, Then that is exactly why im building this project to save time and pick restaurants based on your liking. Waste less time deciding, and pick a restaurant with ease :)

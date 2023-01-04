@@ -20,12 +20,15 @@ pip3 install -r requirements.txt
 ```
 
 ## How to Run
+Sample commands
 ```bash
 python pick_restaurant.py --price "cheap" --nutrition "healthy"
 python pick_restaurant.py --ethnicity "mexican"
 python pick_restaurant.py --price "expensive" --ambiance "fancy"
-
 ```
-
+For more info about the cli
+```bash
+python pick_restaurant.py --help
+```
 ### Built With
 - Python

@@ -36,6 +36,32 @@ class Ethnicity(Enum):
 
 
 class Restaurant:
+    """A Class to represent a restaurant.
+    ...
+
+    Attributes
+    ----------
+    name : str
+        name of the restaurant
+    address : str
+        address of the restaurant
+    price : Price
+        price range of a meal
+    speed : Speed
+        speed of experience
+    ambiance : Ambiance
+        interior experience, decoration, vibe of the place
+    nutrition : Nutrition
+        nutritional rating of a meal here on average
+    ethnicity : Ethnicity
+        ethnic origin of a meal here
+
+    Methods
+    -------
+    get_details():
+        Prints all the restaurant's attributes.
+    """
+
     def __init__(self, name, address, price, speed, ambiance, nutrition, ethnicity):
         self.name = name #name
         self.address = address # address
@@ -43,7 +69,7 @@ class Restaurant:
         self.speed = speed  #slow, moderate, fast
         self.ambiance = ambiance #simple, casual, fancy
         self.nutrition = nutrition #true, false
-        self.ethnicity = ethnicity
+        self.ethnicity = ethnicity #ethnic
     def get_details(self):
         string = ("\n\nname: {}, address: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}\n\n"\
         .format(self.name, self.address, self.price, self.speed, self.ambiance, self.nutrition, self.ethnicity))
@@ -52,6 +78,10 @@ class Restaurant:
 restaurant_list = []
 
 def create_restaurants():
+    """Creates a list of restaurant objects and appends it to the restaurant_list object above.
+    Args: None
+    Returns: None
+    """
     restaurants = [
 
         #Fast and simple
@@ -86,7 +116,7 @@ def create_restaurants():
         ("Houstons", "test address", Price.expensive, Speed.slow, Ambiance.fancy, Nutrition.moderate, Ethnicity.american),
         ("North Italia", "test address", Price.expensive, Speed.slow, Ambiance.fancy, Nutrition.moderate, Ethnicity.italian),
         ("Urth Caffe", "test address", Price.expensive, Speed.slow, Ambiance.simple, Nutrition.healthy, Ethnicity.american),
-        ("Ini Restorante", "test address", Price.expensive, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.italian),
+        ("Ini Restorante", "test address", Price.moderate, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.italian),
 
         #Special Occasion
         ("Baekjeong", "test address", Price.expensive, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.korean),

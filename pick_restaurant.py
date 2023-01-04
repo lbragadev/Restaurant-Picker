@@ -1,3 +1,4 @@
+"""Cli to pick a random restaurant that matches the set of parameters provided."""
 import click
 
 from restaurant import *
@@ -6,9 +7,20 @@ from restaurant import *
 @click.option('--price', type=click.Choice(["cheap", "moderate", "expensive"]), help='price type of restaurant ["cheap", "moderate", "expensive]', required=False)
 @click.option('--speed', type=click.Choice(["slow", "moderate", "fast"]), help='speed of service and experience', required=False)
 @click.option('--ambiance', type=click.Choice(["simple", "moderate", "fancy"]), help='the ambiance of the restaurent IE: laid back, bougie', required=False)
-@click.option('--nutrition', type=click.Choice(["healthy", "moderate", "unhealthy"]), help='is it healthy for you?', required=False)
+@click.option('--nutrition', type=click.Choice(["healthy", "moderate", "unhealthy"]), help='how healthy?', required=False)
 @click.option('--ethnicity', type=click.Choice(["filipino", "mexican", "italian", "american", "thai", "korean", "japanese", "chinese", "vietnamese", "mediterranean"]), help='the ethnic origin of the cuisine', required=False)
 def pick_restaurant(price: Price, speed: Speed, ambiance: Ambiance, nutrition: Nutrition, ethnicity: Ethnicity):
+    """Prints a random restaurant that satisfies the cli parameters.
+
+    Args:
+      price: Price range
+      speed: Speed of service and experience
+      ambiance: Indoor setting of the place
+      nutrition: nutritional rating of a meal here on average
+      ethnicity: Ethnic origin of the cuisine
+    Returns: None
+
+    """
     restaurants = []
 
     #for each restaurant check if restaurant doesn't meet specified criteria skip and dont add to list

@@ -74,7 +74,7 @@ class Restaurant:
         self.nutrition = nutrition #true, false
         self.ethnicity = ethnicity #ethnic
     def get_details(self):
-        string = ("\n\nname: {}, description: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}\n\n"\
+        string = ("\nname: {}, description: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}\n"\
         .format(self.name, self.description, self.price, self.speed, self.ambiance, self.nutrition, self.ethnicity))
         return string
 

@@ -5,12 +5,13 @@ from restaurant import *
 
 
 @click.command()
-@click.option('--price', type=click.Choice(["cheap", "moderate", "expensive", "any"]), prompt='price type of restaurant ["cheap", "moderate", "expensive]', required=False)
-@click.option('--speed', type=click.Choice(["slow", "moderate", "fast", "any"]), prompt='speed of service and experience', required=False)
-@click.option('--ambiance', type=click.Choice(["simple", "moderate", "fancy", "any"]), prompt='the ambiance of the restaurent IE: laid back, bougie', required=False)
-@click.option('--nutrition', type=click.Choice(["healthy", "moderate", "unhealthy", "any"]), prompt='is it healthy for you?', required=False)
-@click.option('--ethnicity', type=click.Choice(["filipino", "mexican", "italian", "american", "thai", "korean", "japanese", "chinese", "vietnamese", "mediterranean", "any"]), prompt='the ethnic origin of the cuisine', required=False)
-def pick_restaurant_prompted(price: Price, speed: Speed, ambiance: Ambiance, nutrition: Nutrition, ethnicity: Ethnicity):
+@click.option('--price', type=click.Choice(["cheap", "moderate", "expensive", "any"]), prompt='price type of restaurant ["cheap", "moderate", "expensive]')
+@click.option('--speed', type=click.Choice(["slow", "moderate", "fast", "any"]), prompt='speed of service and experience')
+@click.option('--ambiance', type=click.Choice(["simple", "moderate", "fancy", "any"]), prompt='the ambiance of the restaurent IE: laid back, bougie')
+@click.option('--nutrition', type=click.Choice(["healthy", "moderate", "unhealthy", "any"]), prompt='is it healthy for you?')
+@click.option('--ethnicity', type=click.Choice(["filipino", "mexican", "italian", "american", "thai", "korean", "japanese", "chinese", "vietnamese", "mediterranean", "any"]), prompt='the ethnic origin of the cuisine')
+@click.option('--result-type', type=click.Choice(['List', 'Random']), prompt='do you want a random selection or display list of restaurants')
+def pick_restaurant_prompted(price: Price, speed: Speed, ambiance: Ambiance, nutrition: Nutrition, ethnicity: Ethnicity, result_type: str):
     """Prints a random restaurant that satisfies the cli parameters.
 
     Args:
@@ -19,6 +20,8 @@ def pick_restaurant_prompted(price: Price, speed: Speed, ambiance: Ambiance, nut
       ambiance: Indoor setting of the place
       nutrition: nutritional rating of a meal here on average
       ethnicity: Ethnic origin of the cuisine
+      result_type: print list of restaurants or select one randomly
+
     Returns: None
 
     """
@@ -39,9 +42,15 @@ def pick_restaurant_prompted(price: Price, speed: Speed, ambiance: Ambiance, nut
         else:
             restaurants.append(i)
 
-    #if no restaurants meets the criteria print message end return
+    #if no restaurants meet the criteria print message end return
     if len(restaurants) < 1:
         click.echo("No restaurant found matching criteria!")
+        return
+
+    #print restaurants list
+    if result_type == "List":
+        for x in restaurants:
+            click.echo(x.get_details())
         return
 
     #return random restaurant that meets criteria

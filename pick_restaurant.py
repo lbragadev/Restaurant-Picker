@@ -9,7 +9,8 @@ from restaurant import *
 @click.option('--ambiance', type=click.Choice(["simple", "moderate", "fancy"]), help='the ambiance of the restaurent IE: laid back, bougie', required=False)
 @click.option('--nutrition', type=click.Choice(["healthy", "moderate", "unhealthy"]), help='how healthy?', required=False)
 @click.option('--ethnicity', type=click.Choice(["filipino", "mexican", "italian", "american", "thai", "korean", "japanese", "chinese", "vietnamese", "mediterranean"]), help='the ethnic origin of the cuisine', required=False)
-def pick_restaurant(price: Price, speed: Speed, ambiance: Ambiance, nutrition: Nutrition, ethnicity: Ethnicity):
+@click.option('--list', type=bool, help='do you want to display list of restaurants or one randomly selected. (True for List, False for randomly selected)', required=False, default=False)
+def pick_restaurant(price: Price, speed: Speed, ambiance: Ambiance, nutrition: Nutrition, ethnicity: Ethnicity, list: bool):
     """Prints a random restaurant that satisfies the cli parameters.
 
     Args:
@@ -18,6 +19,8 @@ def pick_restaurant(price: Price, speed: Speed, ambiance: Ambiance, nutrition: N
       ambiance: Indoor setting of the place
       nutrition: nutritional rating of a meal here on average
       ethnicity: Ethnic origin of the cuisine
+      list: print list of restaurants or select one randomly
+
     Returns: None
 
     """
@@ -41,6 +44,12 @@ def pick_restaurant(price: Price, speed: Speed, ambiance: Ambiance, nutrition: N
     #if no restaurants meets the criteria print message end return
     if len(restaurants) < 1:
         click.echo("No restaurant found matching criteria!")
+        return
+
+    #print restaurants list
+    if list:
+        for i in restaurants:
+            click.echo(i.get_details())
         return
 
     #return random restaurant that meets criteria

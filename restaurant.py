@@ -1,5 +1,6 @@
 from enum import Enum
-
+from typing import List
+from random import *
 
 class Price(Enum):
     cheap = 1
@@ -35,19 +36,22 @@ class Ethnicity(Enum):
 
 
 class Restaurant:
-    def __init__(self, name, address, price, speed, ambiance, healthy, ethnicity):
+    def __init__(self, name, address, price, speed, ambiance, nutrition, ethnicity):
         self.name = name #name
         self.address = address # address
         self.price = price #cheap, moderate, expensive
         self.speed = speed  #slow, moderate, fast
         self.ambiance = ambiance #simple, casual, fancy
-        self.healthy = healthy #true, false
+        self.nutrition = nutrition #true, false
         self.ethnicity = ethnicity
-
+    def get_details(self):
+        string = ("name: {}, address: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}"\
+        .format(self.name, self.address, self.price, self.speed, self.ambiance, self.nutrition, self.ethnicity))
+        return string
 
 restaurant_list = []
 
-def initialize_restaurants():
+def create_restaurants():
     restaurants = [
 
         #Fast and simple
@@ -92,6 +96,27 @@ def initialize_restaurants():
 
     ]
     for i in restaurants:
-        restaurant_list.append(Restaurant(i.name))
+        restaurant_list.append(Restaurant(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
 
-    print("initializing restaurants")
+create_restaurants()
+
+def get_restaurants() -> list[Restaurant]:
+    return restaurant_list
+
+def pick_cheap_restaurant() -> Restaurant:
+    cheap_restaurants = []
+    for i in restaurant_list:
+        if i.price == Price.cheap:
+            cheap_restaurants.append(i)
+
+    return cheap_restaurants[randint(0, len(cheap_restaurants)-1)]
+    
+
+#TODO
+#pick_cheap_restaurants
+#pick_healthy_restaurants
+#pick_special_occasion_restaurants
+
+#pick_restaurant(cheap=True)
+#pick_restaurant(cheap=True, healthy=True)
+#

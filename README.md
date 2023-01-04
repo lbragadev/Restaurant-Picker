@@ -26,6 +26,12 @@ python pick_restaurant.py --price "cheap" --nutrition "healthy"
 python pick_restaurant.py --ethnicity "mexican"
 python pick_restaurant.py --price "expensive" --ambiance "fancy"
 ```
+
+Alternatively you can use the pick_restaurant_prompted.py script instead to get prompted for each parameter
+```bash
+python pick_restaurant_prompted.py
+```
+
 For more info about the cli
 ```bash
 python pick_restaurant.py --help

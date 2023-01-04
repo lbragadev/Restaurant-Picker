@@ -130,6 +130,7 @@ def create_restaurants():
         ("Ini Restorante", "test description", Price.moderate, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.italian),
         ("Inka mama", "test description", Price.moderate, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.peruvian),
         ("Zip KBBQ", "test description", Price.moderate, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.korean),
+        ("Honda Ya", "japanese izakaya", Price.moderate, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.japanese),
 
         #Special Occasion
         ("Baekjeong", "test description", Price.expensive, Speed.slow, Ambiance.moderate, Nutrition.moderate, Ethnicity.korean),
@@ -144,4 +145,8 @@ def create_restaurants():
 create_restaurants()
 
 def get_restaurants() -> list[Restaurant]:
+    """Returns a list of restaurants.
+    Args: None
+    Returns: List of restaurants
+    """
     return restaurant_list

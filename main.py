@@ -14,20 +14,20 @@
 
 
 
-
-
 #DEV_NOTES
 #pip3 install -r requirements.txt
 
-def pickRestaurant():
+def pick_restaurant():
         #for each restaurant
             #
         print("PICKING RESTAURANT")
 
+        
+
 
 def main():
     print("hello world")
-    pickRestaurant()
+    pick_restaurant()
     print("END!")
 
 main()

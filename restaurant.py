@@ -45,7 +45,7 @@ class Restaurant:
         self.nutrition = nutrition #true, false
         self.ethnicity = ethnicity
     def get_details(self):
-        string = ("name: {}, address: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}"\
+        string = ("\n\nname: {}, address: {}, price: {}, speed: {}, ambiance: {}, nutrition: {}, ethnicity: {}\n\n"\
         .format(self.name, self.address, self.price, self.speed, self.ambiance, self.nutrition, self.ethnicity))
         return string
 
@@ -93,7 +93,6 @@ def create_restaurants():
         ("Capital Grille", "test address", Price.expensive, Speed.slow, Ambiance.fancy, Nutrition.moderate, Ethnicity.american),
         ("Mastros", "test address", Price.expensive, Speed.slow, Ambiance.fancy, Nutrition.moderate, Ethnicity.american),
 
-
     ]
     for i in restaurants:
         restaurant_list.append(Restaurant(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
@@ -102,15 +101,6 @@ create_restaurants()
 
 def get_restaurants() -> list[Restaurant]:
     return restaurant_list
-
-def pick_cheap_restaurant() -> Restaurant:
-    cheap_restaurants = []
-    for i in restaurant_list:
-        if i.price == Price.cheap:
-            cheap_restaurants.append(i)
-
-    return cheap_restaurants[randint(0, len(cheap_restaurants)-1)]
-    
 
 #TODO
 #pick_cheap_restaurants

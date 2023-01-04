@@ -35,6 +35,7 @@ python pick_restaurant_prompted.py
 For more info about the cli
 ```bash
 python pick_restaurant.py --help
+python pick_restaurant_prompted.py --help
 ```
 ### Built With
 - Python

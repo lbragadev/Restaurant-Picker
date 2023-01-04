@@ -101,6 +101,8 @@ def create_restaurants():
         ("Yuk daejang", "solid korean food", Price.cheap, Speed.moderate, Ambiance.moderate, Nutrition.moderate, Ethnicity.korean),
         ("Ike's Sandwiches", "Best sandwiches to me", Price.moderate, Speed.fast, Ambiance.moderate, Nutrition.moderate, Ethnicity.american),
         ("Pho Ba Co", "decent Pho", Price.moderate, Speed.fast, Ambiance.simple, Nutrition.moderate, Ethnicity.vietnamese),
+        ("Raising Canes", "chicken tenders!", Price.moderate, Speed.fast, Ambiance.simple, Nutrition.moderate, Ethnicity.american),
+        ("Dave's Hot Chicken", "nashville hot chicken sandwich.", Price.moderate, Speed.fast, Ambiance.simple, Nutrition.moderate, Ethnicity.american),
 
         #Casual
         ("Gerry's Grille", "test description", Price.moderate, Speed.moderate, Ambiance.simple, Nutrition.moderate, Ethnicity.filipino),
